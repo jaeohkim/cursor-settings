@@ -102,7 +102,6 @@
         "when": "terminalFindFocused && isMac"
     },
     {
-        "vim.leader": "",
         "key": "cmd+p",
         "command": "workbench.action.terminal.findPrevious",
         "when": "terminalFindFocused && isMac"
@@ -220,7 +219,7 @@
         "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
     },
     /*
-     * Bookmarks (Mac only - 기존 설정 유지)
+     * Bookmarks (Mac only)
      */
     {
         "key": "shift+cmd+b",
@@ -236,12 +235,16 @@
         "when": "editorTextFocus && vim.mode != 'Normal'"
     },
     {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
         "key": "ctrl+[",
         "command": "extension.vim_escape",
         "when": "editorTextFocus && vim.mode != 'Normal'"
     },
     /*
-     * List Navigation (VIM 스타일 - Cross Platform)
+     * List Navigation (VIM Style)
      */
     {
         "key": "ctrl+n",
@@ -263,13 +266,12 @@
         "command": "workbench.action.quickOpenNavigatePrevious",
         "when": "inQuickOpen"
     },
-    // Disable conflicting new file command
     {
         "key": "ctrl+n",
         "command": "-workbench.action.files.newUntitledFile"
     },
     /*
-     * Mac-style Windows Keybindings (Alt = Cmd 위치)
+     * Mac-style Windows Keybindings (Alt = Cmd Position)
      */
     // Command Palette
     {
