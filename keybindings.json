@@ -181,6 +181,11 @@
         "when": "isWindows"
     },
     {
+        "key": "alt+oem_7",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "isWindows"
+    },
+    {
         "key": "cmd+'",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "isMac"
