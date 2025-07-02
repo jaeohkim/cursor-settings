@@ -1,0 +1,545 @@
+[
+    /*
+     * Quick Open & Navigation
+     */
+    {
+        "key": "ctrl+y",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.showAllEditors",
+        "when": "isWindows"
+    },
+    {
+        "key": "cmd+shift+k",
+        "command": "workbench.action.showAllEditors",
+        "when": "isMac"
+    },
+    /*
+     * Symbol Navigation
+     */
+    {
+        "key": "space o",
+        "command": "workbench.action.gotoSymbol",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "space shift+o",
+        "command": "workbench.action.showAllSymbols",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    /*
+     * Navigation (Go To)
+     */
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFile"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        "key": "alt+d",
+        "command": "gotonext"
+    },
+    {
+        "key": "alt+shift+d",
+        "command": "git.navigateToPreviousDiff"
+    },
+    /*
+     * Find & Search (Cross Platform)
+     */
+    // Windows
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.nextMatchFindAction",
+        "when": "editorFocus && findWidgetVisible && isWindows"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "editor.action.previousMatchFindAction",
+        "when": "editorFocus && findWidgetVisible && isWindows"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.terminal.findNext",
+        "when": "terminalFindFocused && isWindows"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.terminal.findPrevious",
+        "when": "terminalFindFocused && isWindows"
+    },
+    // Mac
+    {
+        "key": "cmd+n",
+        "command": "editor.action.nextMatchFindAction",
+        "when": "editorFocus && findWidgetVisible && isMac"
+    },
+    {
+        "key": "cmd+p",
+        "command": "editor.action.previousMatchFindAction",
+        "when": "editorFocus && findWidgetVisible && isMac"
+    },
+    {
+        "key": "cmd+n",
+        "command": "workbench.action.terminal.findNext",
+        "when": "terminalFindFocused && isMac"
+    },
+    {
+        "vim.leader": "",
+        "key": "cmd+p",
+        "command": "workbench.action.terminal.findPrevious",
+        "when": "terminalFindFocused && isMac"
+    },
+    // Disable conflicting commands
+    {
+        "key": "cmd+g",
+        "command": "-editor.action.nextMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-editor.action.previousMatchFindAction",
+        "when": "editorFocus"
+    },
+    /*
+     * Font Zoom (Cross Platform)
+     */
+    // Windows
+    {
+        "key": "alt+oem_minus",
+        "command": "editor.action.fontZoomOut",
+        "when": "editorTextFocus && isWindows"
+    },
+    {
+        "key": "alt+oem_minus",
+        "command": "workbench.action.terminal.fontZoomOut",
+        "when": "terminalFocus && isWindows"
+    },
+    {
+        "key": "alt+shift+oem_plus",
+        "command": "editor.action.fontZoomIn",
+        "when": "editorTextFocus && isWindows"
+    },
+    {
+        "key": "alt+shift+oem_plus",
+        "command": "workbench.action.terminal.fontZoomIn",
+        "when": "terminalFocus && isWindows"
+    },
+    // Mac
+    {
+        "key": "cmd+-",
+        "command": "editor.action.fontZoomOut",
+        "when": "editorTextFocus && isMac"
+    },
+    {
+        "key": "cmd+-",
+        "command": "workbench.action.terminal.fontZoomOut",
+        "when": "terminalFocus && isMac"
+    },
+    {
+        "key": "cmd+=",
+        "command": "editor.action.fontZoomIn",
+        "when": "editorTextFocus && isMac"
+    },
+    {
+        "key": "cmd+=",
+        "command": "workbench.action.terminal.fontZoomIn",
+        "when": "terminalFocus && isMac"
+    },
+    // Disable conflicting zoom commands
+    {
+        "key": "cmd+-",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "cmd+=",
+        "command": "-workbench.action.zoomIn"
+    },
+    /*
+     * Terminal (Cross Platform)
+     */
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "isWindows"
+    },
+    {
+        "key": "cmd+'",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active && isMac"
+    },
+    /*
+     * Source Control (Cross Platform)
+     */
+    {
+        "key": "ctrl+shift+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active && isWindows"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active && isMac"
+    },
+    // Disable conflicting commands
+    {
+        "key": "shift+cmd+g",
+        "command": "-workbench.action.terminal.openDetectedLink",
+        "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-workbench.action.terminal.findPrevious",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+    },
+    /*
+     * Bookmarks (Mac only - 기존 설정 유지)
+     */
+    {
+        "key": "shift+cmd+b",
+        "command": "workbench.view.extension.bookmarks",
+        "when": "editorFocus && isMac"
+    },
+    /*
+     * VIM (Cross Platform)
+     */
+    {
+        "key": "ctrl+j",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.mode != 'Normal'"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.mode != 'Normal'"
+    },
+    /*
+     * List Navigation (VIM 스타일 - Cross Platform)
+     */
+    {
+        "key": "ctrl+n",
+        "command": "list.focusDown",
+        "when": "listFocus && !inQuickOpen && !findWidgetVisible"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "list.focusUp",
+        "when": "listFocus && !inQuickOpen && !findWidgetVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen"
+    },
+    // Disable conflicting new file command
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    /*
+     * Mac-style Windows Keybindings (Alt = Cmd 위치)
+     */
+    // Command Palette
+    {
+        "key": "alt+shift+p",
+        "command": "workbench.action.showCommands",
+        "when": "isWindows"
+    },
+    // Quick Open
+    {
+        "key": "alt+p",
+        "command": "workbench.action.quickOpen",
+        "when": "isWindows"
+    },
+    // Settings
+    {
+        "key": "alt+oem_comma",
+        "command": "workbench.action.openSettings",
+        "when": "isWindows"
+    },
+    // New File
+    {
+        "key": "alt+n",
+        "command": "workbench.action.files.newUntitledFile",
+        "when": "isWindows"
+    },
+    // Open File
+    {
+        "key": "alt+o",
+        "command": "workbench.action.files.openFile",
+        "when": "isWindows"
+    },
+    // Save
+    {
+        "key": "alt+s",
+        "command": "workbench.action.files.save",
+        "when": "isWindows"
+    },
+    // Save As
+    {
+        "key": "alt+shift+s",
+        "command": "workbench.action.files.saveAs",
+        "when": "isWindows"
+    },
+    // Close Tab
+    {
+        "key": "alt+w",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "isWindows"
+    },
+    // Close All
+    {
+        "key": "alt+shift+w",
+        "command": "workbench.action.closeAllEditors",
+        "when": "isWindows"
+    },
+    // New Tab
+    {
+        "key": "alt+t",
+        "command": "workbench.action.files.newUntitledFile",
+        "when": "isWindows"
+    },
+    // Reopen Tab
+    {
+        "key": "alt+shift+t",
+        "command": "workbench.action.reopenClosedEditor",
+        "when": "isWindows"
+    },
+    // Tab Navigation
+    {
+        "key": "alt+1",
+        "command": "workbench.action.openEditorAtIndex1",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+2",
+        "command": "workbench.action.openEditorAtIndex2",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+3",
+        "command": "workbench.action.openEditorAtIndex3",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+4",
+        "command": "workbench.action.openEditorAtIndex4",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+5",
+        "command": "workbench.action.openEditorAtIndex5",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+6",
+        "command": "workbench.action.openEditorAtIndex6",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+7",
+        "command": "workbench.action.openEditorAtIndex7",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+8",
+        "command": "workbench.action.openEditorAtIndex8",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+9",
+        "command": "workbench.action.openEditorAtIndex9",
+        "when": "isWindows"
+    },
+    // Last Tab
+    {
+        "key": "alt+0",
+        "command": "workbench.action.lastEditorInGroup",
+        "when": "isWindows"
+    },
+    // Find
+    {
+        "key": "alt+f",
+        "command": "actions.find",
+        "when": "isWindows"
+    },
+    // Replace
+    {
+        "key": "alt+shift+f",
+        "command": "editor.action.startFindReplaceAction",
+        "when": "isWindows"
+    },
+    // Find in Files
+    {
+        "key": "alt+shift+h",
+        "command": "workbench.action.findInFiles",
+        "when": "isWindows"
+    },
+    // Copy/Cut/Paste
+    {
+        "key": "alt+c",
+        "command": "editor.action.clipboardCopyAction",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+x",
+        "command": "editor.action.clipboardCutAction",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+v",
+        "command": "editor.action.clipboardPasteAction",
+        "when": "isWindows"
+    },
+    // Select All
+    {
+        "key": "alt+a",
+        "command": "editor.action.selectAll",
+        "when": "isWindows"
+    },
+    // Undo/Redo
+    {
+        "key": "alt+z",
+        "command": "undo",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+shift+z",
+        "command": "redo",
+        "when": "isWindows"
+    },
+    // Go to Line
+    {
+        "key": "alt+g",
+        "command": "workbench.action.gotoLine",
+        "when": "isWindows"
+    },
+    // Toggle Comment
+    {
+        "key": "alt+oem_2",
+        "command": "editor.action.commentLine",
+        "when": "isWindows"
+    },
+    // Format Document
+    {
+        "key": "alt+shift+i",
+        "command": "editor.action.formatDocument",
+        "when": "isWindows"
+    },
+    // Go to Symbol
+    {
+        "key": "alt+r",
+        "command": "workbench.action.gotoSymbol",
+        "when": "isWindows"
+    },
+    // Toggle Terminal
+    {
+        "key": "alt+oem_3",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "isWindows"
+    },
+    // Toggle Sidebar
+    {
+        "key": "alt+b",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "isWindows"
+    },
+    // Explorer
+    {
+        "key": "alt+shift+e",
+        "command": "workbench.view.explorer",
+        "when": "isWindows"
+    },
+    // Extensions
+    {
+        "key": "alt+shift+x",
+        "command": "workbench.view.extensions",
+        "when": "isWindows"
+    },
+    // Problems
+    {
+        "key": "alt+shift+m",
+        "command": "workbench.actions.view.problems",
+        "when": "isWindows"
+    },
+    // Output
+    {
+        "key": "alt+shift+u",
+        "command": "workbench.action.output.toggleOutput",
+        "when": "isWindows"
+    },
+    // Debug Console
+    {
+        "key": "alt+shift+y",
+        "command": "workbench.debug.action.toggleRepl",
+        "when": "isWindows"
+    },
+    // Integrated Terminal
+    {
+        "key": "alt+shift+oem_3",
+        "command": "workbench.action.terminal.new",
+        "when": "isWindows"
+    },
+    /*
+     * Cursor Chat (Cross Platform)
+     */
+    // Windows
+    {
+        "key": "ctrl+l",
+        "command": "aichat.newchat",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+l",
+        "command": "aichat.newchat",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.chat.open",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+shift+l",
+        "command": "workbench.action.chat.open",
+        "when": "isWindows"
+    },
+    // Mac
+    {
+        "key": "cmd+l",
+        "command": "aichat.newchat",
+        "when": "isMac"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "workbench.action.chat.open",
+        "when": "isMac"
+    }
+]

@@ -1,0 +1,12 @@
+# 모든 파일을 기본적으로 무시
+*
+
+# settings.json과 keybindings.json만 추적
+!settings.json
+!keybindings.json
+
+# .gitignore 파일 자체도 추적
+!.gitignore
+
+# README.md가 있다면 추적 (선택사항)
+!README.md
