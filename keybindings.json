@@ -539,14 +539,21 @@
         "when": "isWindows"
     },
     // Mac
+    // 기존 context 유지
     {
         "key": "cmd+l",
-        "command": "aichat.newchat",
+        "command": "composerMode.chat",
         "when": "isMac"
     },
     {
         "key": "shift+cmd+l",
-        "command": "workbench.action.chat.open",
+        "command": "composerMode.agent",
+        "when": "isMac"
+    },
+    // 새로운 Agent Chat용 단축키 추가
+    {
+        "key": "shift+option+l",
+        "command": "composer.newAgentChat",
         "when": "isMac"
     }
 ]

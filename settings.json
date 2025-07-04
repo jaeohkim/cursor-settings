@@ -91,5 +91,8 @@
         "other": "on" // 코드에서는 활성화
     },
     "editor.quickSuggestionsDelay": 200,
-    "vim.smartRelativeLine": true
+    "vim.smartRelativeLine": true,
+    "cursor.general.disableHttp2": true,
+    "workbench.colorTheme": "D2 Dark",
+    "terminal.integrated.fontSize": 13
 }
