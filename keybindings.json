@@ -198,9 +198,9 @@
      * Source Control (Cross Platform)
      */
     {
-        "key": "ctrl+shift+g",
+        "key": "shift+alt+g",
         "command": "workbench.view.scm",
-        "when": "workbench.scm.active && isWindows"
+        "when": "workbench.scm.active"
     },
     {
         "key": "shift+cmd+g",
@@ -552,5 +552,108 @@
         "key": "shift+option+l",
         "command": "composer.newAgentChat",
         "when": "isMac"
+    },
+    /*
+     * Windows 설정 
+     */
+    {
+        "key": "shift+alt+j",
+        "command": "-bookmarks.expandSelectionToPrevious",
+        "when": "isWindows && editorTextFocus"
+    },
+    {
+        "key": "shift+alt+j",
+        "command": "aiSettings.action.open",
+        "when": "isWindows && !isSettingsPaneOpen"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "-aiSettings.action.open",
+        "when": "isWindows && !isSettingsPaneOpen"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "workbench.view.search",
+        "when": "isWindows && workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "-workbench.view.search",
+        "when": "isWindows && workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "workbench.action.terminal.searchWorkspace",
+        "when": "isWindows && terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "-workbench.action.terminal.searchWorkspace",
+        "when": "isWindows && terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "workbench.action.findInFiles",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "-workbench.action.findInFiles",
+        "when": "isWindows"
+    },
+    {
+        "key": "shift+alt+d",
+        "command": "workbench.view.debug",
+        "when": "isWindows && viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "-workbench.view.debug",
+        "when": "isWindows && viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm",
+        "when": "isWindows && workbench.scm.active"
+    },
+    {
+        "key": "shift+alt+g",
+        "command": "workbench.action.terminal.openDetectedLink",
+        "when": "isWindows && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.action.terminal.openDetectedLink",
+        "when": "isWindows && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+    },
+    {
+        "key": "alt+n",
+        "command": "composer.createNewWithPrevContext",
+        "when": "isWindows && (composerFocused || focusedView =~ /^workbench.panel.aichat.view/)"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-composer.createNewWithPrevContext",
+        "when": "isWindows && (composerFocused || focusedView =~ /^workbench.panel.aichat.view/)"
+    },
+    {
+        "key": "alt+t",
+        "command": "composer.createNewComposerTab",
+        "when": "isWindows && (composerFocused || focusedView =~ /^workbench.panel.aichat.view/)"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-composer.createNewComposerTab",
+        "when": "isWindows && (composerFocused || focusedView =~ /^workbench.panel.aichat.view/)"
+    },
+    {
+        "key": "alt+k",
+        "command": "aipopup.action.modal.generate",
+        "when": "isWindows && editorFocus && !composerBarIsVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-aipopup.action.modal.generate",
+        "when": "isWindows && editorFocus && !composerBarIsVisible"
     }
 ]
