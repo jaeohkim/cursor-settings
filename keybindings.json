@@ -655,5 +655,33 @@
         "key": "ctrl+k",
         "command": "-aipopup.action.modal.generate",
         "when": "isWindows && editorFocus && !composerBarIsVisible"
+    },
+    {
+        "key": "alt+l",
+        "command": "isWindows && aichat.newchataction"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "isWindows && -aichat.newchataction"
+    },
+    {
+        "key": "alt+l",
+        "command": "composer.sendToAgent",
+        "when": "isWindows && editorHasPromptBar && editorPromptBarFocused"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-composer.sendToAgent",
+        "when": "isWindows && editorHasPromptBar && editorPromptBarFocused"
+    },
+    {
+        "key": "alt+l",
+        "command": "extension.vim_navigateCtrlL",
+        "when": "isWindows && editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-extension.vim_navigateCtrlL",
+        "when": "isWindows && editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
     }
 ]
