@@ -37,17 +37,16 @@
     "vsicons.dontShowNewVersionMessage": true,
     "cursor.composer.cmdPFilePicker2": true,
     "editor.lineNumbers": "on",
-    "cursor.composer.textSizeScale": 1.15,
     // VIM 설정
     "vim.leader": "", // 리더키 비활성화
     "vim.autoSwitchInputMethod.enable": false,
     "vim.useCtrlKeys": true,
     "vim.handleKeys": {
         "<C-[>": true,
-        "<C-j>": true,
-        "<C-b>": false,
         "<C-a>": false,
+        "<C-b>": false,
         "<C-c>": false,
+        "<C-j>": true,
         "<C-v>": false,
         "<C-x>": false,
         "<C-z>": false
@@ -92,7 +91,7 @@
     },
     "editor.quickSuggestionsDelay": 200,
     "vim.smartRelativeLine": true,
-    "cursor.general.disableHttp2": true,
     "workbench.colorTheme": "Visual Studio Dark",
-    "terminal.integrated.fontSize": 13
+    "remote.autoForwardPortsSource": "hybrid",
+    "terminal.integrated.fontSize": 12
 }

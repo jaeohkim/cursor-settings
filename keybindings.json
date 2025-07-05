@@ -675,13 +675,23 @@
         "when": "isWindows && editorHasPromptBar && editorPromptBarFocused"
     },
     {
-        "key": "alt+l",
-        "command": "extension.vim_navigateCtrlL",
-        "when": "isWindows && editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
+        "key": "alt+f",
+        "command": "workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
     },
     {
-        "key": "ctrl+l",
-        "command": "-extension.vim_navigateCtrlL",
-        "when": "isWindows && editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
-    }
+        "key": "ctrl+f",
+        "command": "-workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+    },
+    // {
+    //     "key": "alt+l",
+    //     "command": "extension.vim_navigateCtrlL",
+    //     "when": "isWindows && editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
+    // },
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "-extension.vim_navigateCtrlL",
+    //     "when": "isWindows && editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
+    // }
 ]
