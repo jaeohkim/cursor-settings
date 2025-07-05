@@ -518,25 +518,22 @@
      * Cursor Chat (Cross Platform)
      */
     // Windows
-    {
-        "key": "ctrl+l",
-        "command": "aichat.newchat",
-        "when": "isWindows"
-    },
+    // 기존 context 유지
     {
         "key": "alt+l",
-        "command": "aichat.newchat",
+        "command": "composerMode.chat",
         "when": "isWindows"
     },
     {
-        "key": "ctrl+shift+l",
-        "command": "workbench.action.chat.open",
+        "key": "shift+alt+l",
+        "command": "composerMode.agent",
         "when": "isWindows"
     },
+    // 새로운 Agent Chat용 단축키 추가
     {
-        "key": "alt+shift+l",
-        "command": "workbench.action.chat.open",
-        "when": "isWindows"
+        "key": "shift+win+l",
+        "command": "composer.newAgentChat",
+        "when": "isMac"
     },
     // Mac
     // 기존 context 유지
