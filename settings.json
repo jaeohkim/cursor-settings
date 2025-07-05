@@ -93,6 +93,6 @@
     "editor.quickSuggestionsDelay": 200,
     "vim.smartRelativeLine": true,
     "cursor.general.disableHttp2": true,
-    "workbench.colorTheme": "D2 Dark",
+    "workbench.colorTheme": "Visual Studio Dark",
     "terminal.integrated.fontSize": 13
 }

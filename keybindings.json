@@ -656,14 +656,14 @@
         "command": "-aipopup.action.modal.generate",
         "when": "isWindows && editorFocus && !composerBarIsVisible"
     },
-    {
-        "key": "alt+l",
-        "command": "isWindows && aichat.newchataction"
-    },
-    {
-        "key": "ctrl+l",
-        "command": "isWindows && -aichat.newchataction"
-    },
+    // {
+    //     "key": "alt+l",
+    //     "command": "isWindows && aichat.newchataction"
+    // },
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "isWindows && -aichat.newchataction"
+    // },
     {
         "key": "alt+l",
         "command": "composer.sendToAgent",
