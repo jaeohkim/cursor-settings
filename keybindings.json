@@ -1,25 +1,10 @@
 [
     /*
-     * Quick Open & Navigation
+     * Show Editors
      */
     {
         "key": "ctrl+y",
-        "command": "workbench.action.quickOpen"
-    },
-    {
-        "key": "ctrl+y",
-        "command": "workbench.action.quickOpenNavigateNextInFilePicker",
-        "when": "inFilesPicker && inQuickOpen"
-    },
-    {
-        "key": "ctrl+shift+k",
         "command": "workbench.action.showAllEditors",
-        "when": "isWindows"
-    },
-    {
-        "key": "cmd+shift+k",
-        "command": "workbench.action.showAllEditors",
-        "when": "isMac"
     },
     /*
      * Symbol Navigation
@@ -58,7 +43,7 @@
         "command": "gotonext"
     },
     {
-        "key": "alt+shift+d",
+        "key": "ctrl+alt+d",
         "command": "git.navigateToPreviousDiff"
     },
     /*
@@ -132,12 +117,12 @@
         "when": "terminalFocus && isWindows"
     },
     {
-        "key": "alt+shift+oem_plus",
+        "key": "alt+shift+oem_minus",
         "command": "editor.action.fontZoomIn",
         "when": "editorTextFocus && isWindows"
     },
     {
-        "key": "alt+shift+oem_plus",
+        "key": "alt+shift+oem_minus",
         "command": "workbench.action.terminal.fontZoomIn",
         "when": "terminalFocus && isWindows"
     },
@@ -153,12 +138,12 @@
         "when": "terminalFocus && isMac"
     },
     {
-        "key": "cmd+=",
+        "key": "cmd+shift+-",
         "command": "editor.action.fontZoomIn",
         "when": "editorTextFocus && isMac"
     },
     {
-        "key": "cmd+=",
+        "key": "cmd+shift+-",
         "command": "workbench.action.terminal.fontZoomIn",
         "when": "terminalFocus && isMac"
     },
@@ -167,18 +152,9 @@
         "key": "cmd+-",
         "command": "-workbench.action.zoomOut"
     },
-    {
-        "key": "cmd+=",
-        "command": "-workbench.action.zoomIn"
-    },
     /*
      * Terminal (Cross Platform)
      */
-    {
-        "key": "ctrl+`",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "isWindows"
-    },
     {
         "key": "alt+oem_7",
         "command": "workbench.action.terminal.toggleTerminal",
@@ -188,11 +164,6 @@
         "key": "cmd+'",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "isMac"
-    },
-    {
-        "key": "ctrl+`",
-        "command": "-workbench.action.terminal.toggleTerminal",
-        "when": "terminal.active && isMac"
     },
     /*
      * Source Control (Cross Platform)
@@ -229,15 +200,6 @@
     /*
      * VIM (Cross Platform)
      */
-    {
-        "key": "ctrl+j",
-        "command": "extension.vim_escape",
-        "when": "editorTextFocus && vim.mode != 'Normal'"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "-workbench.action.togglePanel"
-    },
     {
         "key": "ctrl+[",
         "command": "extension.vim_escape",
@@ -683,6 +645,76 @@
         "key": "ctrl+f",
         "command": "-workbench.action.terminal.focusFind",
         "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+    },
+    {
+        "key": "shift+alt+d",
+        "command": "composer.fixerrormessage",
+        "when": "@composer.isCursorOnLint"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "-composer.fixerrormessage",
+        "when": "@composer.isCursorOnLint"
+    },
+    {
+        "key": "alt+d",
+        "command": "editor.action.inlineDiffs.nextChange",
+        "when": "editorTextFocus && @inlineDiffs.nextChange.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "alt+j",
+        "command": "-editor.action.inlineDiffs.nextChange",
+        "when": "editorTextFocus && @inlineDiffs.nextChange.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "alt+d",
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "alt+f5",
+        "command": "-workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "alt+d",
+        "command": "workbench.action.editor.nextChange",
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+    },
+    {
+        "key": "alt+f5",
+        "command": "-workbench.action.editor.nextChange",
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "editor.action.inlineDiffs.previousChange",
+        "when": "editorTextFocus && @inlineDiffs.previousChange.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "alt+k",
+        "command": "-editor.action.inlineDiffs.previousChange",
+        "when": "editorTextFocus && @inlineDiffs.previousChange.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "shift+alt+f5",
+        "command": "-workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "workbench.action.editor.previousChange",
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+    },
+    {
+        "key": "shift+alt+f5",
+        "command": "-workbench.action.editor.previousChange",
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
     },
     // {
     //     "key": "alt+l",

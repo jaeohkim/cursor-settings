@@ -93,5 +93,7 @@
     "vim.smartRelativeLine": true,
     "workbench.colorTheme": "Visual Studio Dark",
     "remote.autoForwardPortsSource": "hybrid",
-    "terminal.integrated.fontSize": 12
+    "terminal.integrated.fontSize": 12,
+    "cursor.general.disableHttp2": true,
+    "diffEditor.maxComputationTime": 0
 }
