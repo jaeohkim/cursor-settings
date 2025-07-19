@@ -4,20 +4,7 @@
      */
     {
         "key": "ctrl+y",
-        "command": "workbench.action.showAllEditors",
-    },
-    /*
-     * Symbol Navigation
-     */
-    {
-        "key": "space o",
-        "command": "workbench.action.gotoSymbol",
-        "when": "editorTextFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "space shift+o",
-        "command": "workbench.action.showAllSymbols",
-        "when": "editorTextFocus && vim.mode == 'Normal'"
+        "command": "workbench.action.quickOpen",
     },
     /*
      * Navigation (Go To)
