@@ -672,5 +672,88 @@
     {
         "key": "ctrl+j",
         "command": "-workbench.action.togglePanel"
+    },
+    /*
+     * VIM Style Workflow (Cross Platform)
+     * Vim 스타일 워크플로우 - 플랫폼 독립적
+     */
+    // VIM과 충돌하는 기본 키바인딩 비활성화
+    {
+        "key": "ctrl+c",
+        "command": "-editor.action.clipboardCopyAction",
+        "when": "vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-editor.action.clipboardPasteAction",
+        "when": "vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "-editor.action.clipboardCutAction",
+        "when": "vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-editor.action.selectAll",
+        "when": "vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+z",
+        "command": "-undo",
+        "when": "vim.mode != 'Insert'"
+    },
+    // Mac에서도 동일하게 적용
+    {
+        "key": "cmd+c",
+        "command": "-editor.action.clipboardCopyAction",
+        "when": "vim.mode != 'Insert' && isMac"
+    },
+    {
+        "key": "cmd+v",
+        "command": "-editor.action.clipboardPasteAction",
+        "when": "vim.mode != 'Insert' && isMac"
+    },
+    {
+        "key": "cmd+x",
+        "command": "-editor.action.clipboardCutAction",
+        "when": "vim.mode != 'Insert' && isMac"
+    },
+    {
+        "key": "cmd+a",
+        "command": "-editor.action.selectAll",
+        "when": "vim.mode != 'Insert' && isMac"
+    },
+    {
+        "key": "cmd+z",
+        "command": "-undo",
+        "when": "vim.mode != 'Insert' && isMac"
+    },
+    // Insert 모드에서는 일부 Ctrl/Cmd 키 허용 (점진적 전환)
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.files.save",
+        "when": "vim.mode == 'Insert' && isWindows"
+    },
+    {
+        "key": "cmd+s",
+        "command": "workbench.action.files.save",
+        "when": "vim.mode == 'Insert' && isMac"
+    },
+    // Vim Normal 모드에서 Leader 기반 단축키
+    {
+        "key": "space w",
+        "command": "workbench.action.files.save",
+        "when": "vim.mode == 'Normal' && vim.use<C-w> && vim.active"
+    },
+    {
+        "key": "space q",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "vim.mode == 'Normal' && vim.active"
+    },
+    {
+        "key": "space a",
+        "command": "editor.action.selectAll",
+        "when": "vim.mode == 'Normal' && vim.active"
     }
 ]
