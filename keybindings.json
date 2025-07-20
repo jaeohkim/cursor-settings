@@ -149,11 +149,6 @@
      * 터미널 토글 및 제어
      */
     {
-        "key": "alt+oem_7",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "isWindows"
-    },
-    {
         "key": "cmd+'",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "isMac"
@@ -162,11 +157,6 @@
      * Source Control (Cross Platform)
      * Git 및 소스 컨트롤 관련 기능
      */
-    {
-        "key": "shift+alt+g",
-        "command": "workbench.view.scm",
-        "when": "workbench.scm.active && isWindows"
-    },
     {
         "key": "shift+cmd+g",
         "command": "workbench.view.scm",
@@ -187,11 +177,6 @@
      * Bookmarks (Cross Platform)
      * 북마크 확장 기능 - 양쪽 플랫폼 지원
      */
-    {
-        "key": "shift+alt+b",
-        "command": "workbench.view.extension.bookmarks",
-        "when": "editorFocus && isWindows"
-    },
     {
         "key": "shift+cmd+b",
         "command": "workbench.view.extension.bookmarks",
@@ -384,12 +369,6 @@
     },
     // 탐색기
     {
-        "key": "alt+shift+e",
-        "command": "workbench.view.explorer",
-        "when": "isWindows"
-    },
-    // 확장
-    {
         "key": "alt+shift+x",
         "command": "workbench.view.extensions",
         "when": "isWindows"
@@ -486,23 +465,6 @@
         "when": "isWindows"
     },
     // 디버그 뷰
-    {
-        "key": "shift+alt+d",
-        "command": "workbench.view.debug",
-        "when": "isWindows && viewContainer.workbench.view.debug.enabled"
-    },
-    {
-        "key": "ctrl+shift+d",
-        "command": "-workbench.view.debug",
-        "when": "isWindows && viewContainer.workbench.view.debug.enabled"
-    },
-    // 소스 컨트롤 뷰 (기본 키바인딩 비활성화)
-    {
-        "key": "ctrl+shift+g",
-        "command": "-workbench.view.scm",
-        "when": "isWindows && workbench.scm.active"
-    },
-    // 컴포저 관련 기능
     {
         "key": "alt+n",
         "command": "composer.createNewWithPrevContext",
@@ -789,13 +751,36 @@
     {
         "key": "space t",
         "command": "workbench.action.terminal.toggleTerminal",
-        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
+        "when": "vim.mode == 'Normal' && vim.active && (editorTextFocus || terminalFocus)"
     },
     // 사이드 패널에서 스페이스 정상 입력 허용
     {
         "key": "space",
         "command": "type",
-        "args": { "text": " " },
-        "when": "!editorTextFocus && !vim.active"
+        "args": {
+            "text": " "
+        },
+        "when": "!editorTextFocus && !terminalFocus && !vim.active"
+    },
+    // 터미널에서도 일부 Leader 키 허용
+    {
+        "key": "space w",
+        "command": "workbench.action.files.save",
+        "when": "vim.mode == 'Normal' && vim.active && terminalFocus"
+    },
+    {
+        "key": "space q",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "vim.mode == 'Normal' && vim.active && terminalFocus"
+    },
+    {
+        "key": "space o",
+        "command": "workbench.action.quickOpen",
+        "when": "vim.mode == 'Normal' && vim.active && terminalFocus"
+    },
+    {
+        "key": "space p",
+        "command": "workbench.action.showCommands",
+        "when": "vim.mode == 'Normal' && vim.active && terminalFocus"
     }
 ]
