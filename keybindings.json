@@ -36,52 +36,31 @@
         "key": "ctrl+alt+d",
         "command": "git.navigateToPreviousDiff"
     },
+    // VIM 스타일 검색 결과 네비게이션
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.nextMatchFindAction",
+        "when": "editorFocus && findWidgetVisible"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "editor.action.previousMatchFindAction",
+        "when": "editorFocus && findWidgetVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.terminal.findNext",
+        "when": "terminalFindFocused"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.terminal.findPrevious",
+        "when": "terminalFindFocused"
+    },
     /*
      * Find & Search (Cross Platform)
      * 플랫폼별 검색 및 찾기 기능 통합
      */
-    // Windows - 검색 결과 네비게이션
-    {
-        "key": "ctrl+n",
-        "command": "editor.action.nextMatchFindAction",
-        "when": "editorFocus && findWidgetVisible && isWindows"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "editor.action.previousMatchFindAction",
-        "when": "editorFocus && findWidgetVisible && isWindows"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "workbench.action.terminal.findNext",
-        "when": "terminalFindFocused && isWindows"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "workbench.action.terminal.findPrevious",
-        "when": "terminalFindFocused && isWindows"
-    },
-    // Mac - 검색 결과 네비게이션
-    {
-        "key": "cmd+n",
-        "command": "editor.action.nextMatchFindAction",
-        "when": "editorFocus && findWidgetVisible && isMac"
-    },
-    {
-        "key": "cmd+p",
-        "command": "editor.action.previousMatchFindAction",
-        "when": "editorFocus && findWidgetVisible && isMac"
-    },
-    {
-        "key": "cmd+n",
-        "command": "workbench.action.terminal.findNext",
-        "when": "terminalFindFocused && isMac"
-    },
-    {
-        "key": "cmd+p",
-        "command": "workbench.action.terminal.findPrevious",
-        "when": "terminalFindFocused && isMac"
-    },
     // 충돌하는 기본 검색 키바인딩 비활성화
     {
         "key": "cmd+g",

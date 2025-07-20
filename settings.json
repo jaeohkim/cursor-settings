@@ -54,9 +54,9 @@
         "<C-x>": false, // Vim의 decrement 우선
         "<C-z>": false, // Vim의 suspend 우선
         "<C-s>": false, // Insert 모드에서만 허용
-        "<C-f>": true,  // Vim의 페이지 다운 허용
-        "<C-u>": true,  // Vim의 페이지 업 허용
-        "<C-d>": true   // Vim의 반 페이지 다운 허용
+        "<C-f>": true, // Vim의 페이지 다운 허용
+        "<C-u>": true, // Vim의 페이지 업 허용
+        "<C-d>": true // Vim의 반 페이지 다운 허용
     },
     "vim.insertModeKeyBindings": [
         {
@@ -72,24 +72,44 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         // 기본 개발 기능
         {
-            "before": ["g", "d"],
-            "commands": ["editor.action.revealDefinition"]
+            "before": [
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
         },
         {
-            "before": ["g", "r"],
-            "commands": ["editor.action.referenceSearch.trigger"]
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.referenceSearch.trigger"
+            ]
         }
         // Leader 기반 기능은 keybindings.json에서 관리
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         // Visual 모드에서 Leader 기반 기능
         {
-            "before": ["<leader>", "c"],
-            "after": ["y"]
+            "before": [
+                "<leader>",
+                "c"
+            ],
+            "after": [
+                "y"
+            ]
         },
         {
-            "before": ["<leader>", "x"],
-            "after": ["d"]
+            "before": [
+                "<leader>",
+                "x"
+            ],
+            "after": [
+                "d"
+            ]
         }
     ],
     // 한글 관련 추가 설정
@@ -107,5 +127,6 @@
     "diffEditor.maxComputationTime": 0,
     "remote.SSH.remotePlatform": {
         "server": "linux"
-    }
+    },
+    "terminal.integrated.fontSize": 15
 }
