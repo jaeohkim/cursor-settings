@@ -740,20 +740,62 @@
         "command": "workbench.action.files.save",
         "when": "vim.mode == 'Insert' && isMac"
     },
-    // Vim Normal 모드에서 Leader 기반 단축키
+    // Vim Normal 모드에서 Leader 기반 단축키 (에디터 포커스 시에만)
     {
         "key": "space w",
         "command": "workbench.action.files.save",
-        "when": "vim.mode == 'Normal' && vim.use<C-w> && vim.active"
+        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
     },
     {
         "key": "space q",
         "command": "workbench.action.closeActiveEditor",
-        "when": "vim.mode == 'Normal' && vim.active"
+        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
     },
     {
         "key": "space a",
         "command": "editor.action.selectAll",
-        "when": "vim.mode == 'Normal' && vim.active"
+        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
+    },
+    {
+        "key": "space f",
+        "command": "actions.find",
+        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
+    },
+    {
+        "key": "space r",
+        "command": "editor.action.startFindReplaceAction",
+        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
+    },
+    {
+        "key": "space shift+f",
+        "command": "workbench.action.findInFiles",
+        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
+    },
+    {
+        "key": "space o",
+        "command": "workbench.action.quickOpen",
+        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
+    },
+    {
+        "key": "space p",
+        "command": "workbench.action.showCommands",
+        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
+    },
+    {
+        "key": "space e",
+        "command": "workbench.view.explorer",
+        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
+    },
+    {
+        "key": "space t",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "vim.mode == 'Normal' && vim.active && editorTextFocus"
+    },
+    // 사이드 패널에서 스페이스 정상 입력 허용
+    {
+        "key": "space",
+        "command": "type",
+        "args": { "text": " " },
+        "when": "!editorTextFocus && !vim.active"
     }
 ]

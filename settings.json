@@ -78,59 +78,8 @@
         {
             "before": ["g", "r"],
             "commands": ["editor.action.referenceSearch.trigger"]
-        },
-        // Leader 기반 기능 (전체 선택, 저장, 종료)
-        {
-            "before": ["<leader>", "a"],
-            "after": ["g", "g", "V", "G"]
-        },
-        {
-            "before": ["<leader>", "w"],
-            "commands": ["workbench.action.files.save"]
-        },
-        {
-            "before": ["<leader>", "q"],
-            "commands": ["workbench.action.closeActiveEditor"]
-        },
-        {
-            "before": ["<leader>", "W"],
-            "commands": ["workbench.action.files.saveAll"]
-        },
-        {
-            "before": ["<leader>", "Q"],
-            "commands": ["workbench.action.closeAllEditors"]
-        },
-        // 찾기 및 바꾸기
-        {
-            "before": ["<leader>", "f"],
-            "commands": ["actions.find"]
-        },
-        {
-            "before": ["<leader>", "r"],
-            "commands": ["editor.action.startFindReplaceAction"]
-        },
-        {
-            "before": ["<leader>", "F"],
-            "commands": ["workbench.action.findInFiles"]
-        },
-        // 파일 및 워크스페이스 관리
-        {
-            "before": ["<leader>", "o"],
-            "commands": ["workbench.action.quickOpen"]
-        },
-        {
-            "before": ["<leader>", "p"],
-            "commands": ["workbench.action.showCommands"]
-        },
-        // 사이드바 및 터미널
-        {
-            "before": ["<leader>", "e"],
-            "commands": ["workbench.view.explorer"]
-        },
-        {
-            "before": ["<leader>", "t"],
-            "commands": ["workbench.action.terminal.toggleTerminal"]
         }
+        // Leader 기반 기능은 keybindings.json에서 관리
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         // Visual 모드에서 Leader 기반 기능
