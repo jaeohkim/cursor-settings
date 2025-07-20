@@ -202,6 +202,30 @@
         "when": "editorTextFocus && vim.mode != 'Normal'"
     },
     /*
+     * List Navigation (VIM Style)
+     * VIM 스타일 리스트 네비게이션
+     */
+    {
+        "key": "ctrl+n",
+        "command": "list.focusDown",
+        "when": "listFocus && !inQuickOpen && !findWidgetVisible"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "list.focusUp",
+        "when": "listFocus && !inQuickOpen && !findWidgetVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen"
+    },
+    /*
      * Cursor AI Chat (Cross Platform)
      * Cursor의 AI 채팅 및 에이전트 기능
      */
