@@ -1,13 +1,15 @@
 [
     /*
      * Show Editors
+     * 빠른 에디터 전환을 위한 키바인딩
      */
     {
         "key": "ctrl+y",
-        "command": "workbench.action.quickOpen",
+        "command": "workbench.action.quickOpen"
     },
     /*
      * Navigation (Go To)
+     * 에디터 내 네비게이션 및 이동 관련 키바인딩
      */
     {
         "key": "ctrl+o",
@@ -27,7 +29,8 @@
     },
     {
         "key": "alt+d",
-        "command": "gotonext"
+        "command": "gotonext",
+        "when": "!editorTextFocus && !textCompareEditorVisible"
     },
     {
         "key": "ctrl+alt+d",
@@ -35,8 +38,9 @@
     },
     /*
      * Find & Search (Cross Platform)
+     * 플랫폼별 검색 및 찾기 기능 통합
      */
-    // Windows
+    // Windows - 검색 결과 네비게이션
     {
         "key": "ctrl+n",
         "command": "editor.action.nextMatchFindAction",
@@ -57,7 +61,7 @@
         "command": "workbench.action.terminal.findPrevious",
         "when": "terminalFindFocused && isWindows"
     },
-    // Mac
+    // Mac - 검색 결과 네비게이션
     {
         "key": "cmd+n",
         "command": "editor.action.nextMatchFindAction",
@@ -78,7 +82,7 @@
         "command": "workbench.action.terminal.findPrevious",
         "when": "terminalFindFocused && isMac"
     },
-    // Disable conflicting commands
+    // 충돌하는 기본 검색 키바인딩 비활성화
     {
         "key": "cmd+g",
         "command": "-editor.action.nextMatchFindAction",
@@ -91,8 +95,9 @@
     },
     /*
      * Font Zoom (Cross Platform)
+     * 에디터 및 터미널 폰트 크기 조절
      */
-    // Windows
+    // Windows - 폰트 줌
     {
         "key": "alt+oem_minus",
         "command": "editor.action.fontZoomOut",
@@ -113,7 +118,7 @@
         "command": "workbench.action.terminal.fontZoomIn",
         "when": "terminalFocus && isWindows"
     },
-    // Mac
+    // Mac - 폰트 줌
     {
         "key": "cmd+-",
         "command": "editor.action.fontZoomOut",
@@ -134,13 +139,14 @@
         "command": "workbench.action.terminal.fontZoomIn",
         "when": "terminalFocus && isMac"
     },
-    // Disable conflicting zoom commands
+    // 충돌하는 워크벤치 줌 명령 비활성화
     {
         "key": "cmd+-",
         "command": "-workbench.action.zoomOut"
     },
     /*
      * Terminal (Cross Platform)
+     * 터미널 토글 및 제어
      */
     {
         "key": "alt+oem_7",
@@ -154,18 +160,19 @@
     },
     /*
      * Source Control (Cross Platform)
+     * Git 및 소스 컨트롤 관련 기능
      */
     {
         "key": "shift+alt+g",
         "command": "workbench.view.scm",
-        "when": "workbench.scm.active"
+        "when": "workbench.scm.active && isWindows"
     },
     {
         "key": "shift+cmd+g",
         "command": "workbench.view.scm",
         "when": "workbench.scm.active && isMac"
     },
-    // Disable conflicting commands
+    // 충돌하는 기본 소스 컨트롤 키바인딩 비활성화
     {
         "key": "shift+cmd+g",
         "command": "-workbench.action.terminal.openDetectedLink",
@@ -177,8 +184,14 @@
         "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
     },
     /*
-     * Bookmarks (Mac only)
+     * Bookmarks (Cross Platform)
+     * 북마크 확장 기능 - 양쪽 플랫폼 지원
      */
+    {
+        "key": "shift+alt+b",
+        "command": "workbench.view.extension.bookmarks",
+        "when": "editorFocus && isWindows"
+    },
     {
         "key": "shift+cmd+b",
         "command": "workbench.view.extension.bookmarks",
@@ -186,6 +199,7 @@
     },
     /*
      * VIM (Cross Platform)
+     * VIM 스타일 키바인딩
      */
     {
         "key": "ctrl+[",
@@ -194,6 +208,7 @@
     },
     /*
      * List Navigation (VIM Style)
+     * VIM 스타일 리스트 네비게이션
      */
     {
         "key": "ctrl+n",
@@ -211,84 +226,57 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "ctrl+n",
-        "command": "-workbench.action.files.newUntitledFile"
-    },
-    {
         "key": "ctrl+p",
         "command": "workbench.action.quickOpenNavigatePrevious",
         "when": "inQuickOpen"
     },
     /*
      * Mac-style Windows Keybindings (Alt = Cmd Position)
+     * Windows에서 Mac 스타일 키보드 단축키 제공 (Alt 키를 Cmd 키처럼 사용)
      */
-    // Command Palette
+    // 명령 팔레트
     {
         "key": "alt+shift+p",
         "command": "workbench.action.showCommands",
         "when": "isWindows"
     },
-    // Quick Open
+    // 빠른 열기
     {
         "key": "alt+p",
         "command": "workbench.action.quickOpen",
         "when": "isWindows"
     },
-    // Settings
+    // 설정
     {
         "key": "alt+oem_comma",
         "command": "workbench.action.openSettings",
         "when": "isWindows"
     },
-    // New File
-    {
-        "key": "alt+n",
-        "command": "workbench.action.files.newUntitledFile",
-        "when": "isWindows"
-    },
-    // Open File
+    // 파일 열기
     {
         "key": "alt+o",
         "command": "workbench.action.files.openFile",
         "when": "isWindows"
     },
-    // Save
-    {
-        "key": "alt+s",
-        "command": "workbench.action.files.save",
-        "when": "isWindows"
-    },
-    // Save As
+    // 다른 이름으로 저장
     {
         "key": "alt+shift+s",
         "command": "workbench.action.files.saveAs",
         "when": "isWindows"
     },
-    // Close Tab
-    {
-        "key": "alt+w",
-        "command": "workbench.action.closeActiveEditor",
-        "when": "isWindows"
-    },
-    // Close All
+    // 모든 탭 닫기
     {
         "key": "alt+shift+w",
         "command": "workbench.action.closeAllEditors",
         "when": "isWindows"
     },
-    // New Tab
-    {
-        "key": "alt+t",
-        "command": "workbench.action.files.newUntitledFile",
-        "when": "isWindows"
-    },
-    // Reopen Tab
+    // 최근에 닫은 탭 다시 열기
     {
         "key": "alt+shift+t",
         "command": "workbench.action.reopenClosedEditor",
         "when": "isWindows"
     },
-    // Tab Navigation
+    // 탭 네비게이션 (1-9)
     {
         "key": "alt+1",
         "command": "workbench.action.openEditorAtIndex1",
@@ -334,140 +322,107 @@
         "command": "workbench.action.openEditorAtIndex9",
         "when": "isWindows"
     },
-    // Last Tab
+    // 마지막 탭
     {
         "key": "alt+0",
         "command": "workbench.action.lastEditorInGroup",
         "when": "isWindows"
     },
-    // Find
+    // 찾기
     {
         "key": "alt+f",
         "command": "actions.find",
-        "when": "isWindows"
+        "when": "isWindows && editorFocus"
     },
-    // Replace
+    // 바꾸기
     {
         "key": "alt+shift+f",
         "command": "editor.action.startFindReplaceAction",
-        "when": "isWindows"
+        "when": "isWindows && editorFocus"
     },
-    // Find in Files
+    // 파일에서 찾기
     {
         "key": "alt+shift+h",
         "command": "workbench.action.findInFiles",
         "when": "isWindows"
     },
-    // Copy/Cut/Paste
-    {
-        "key": "alt+c",
-        "command": "editor.action.clipboardCopyAction",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+x",
-        "command": "editor.action.clipboardCutAction",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+v",
-        "command": "editor.action.clipboardPasteAction",
-        "when": "isWindows"
-    },
-    // Select All
-    {
-        "key": "alt+a",
-        "command": "editor.action.selectAll",
-        "when": "isWindows"
-    },
-    // Undo/Redo
-    {
-        "key": "alt+z",
-        "command": "undo",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+shift+z",
-        "command": "redo",
-        "when": "isWindows"
-    },
-    // Go to Line
+    // 줄로 이동
     {
         "key": "alt+g",
         "command": "workbench.action.gotoLine",
         "when": "isWindows"
     },
-    // Toggle Comment
+    // 주석 토글
     {
         "key": "alt+oem_2",
         "command": "editor.action.commentLine",
         "when": "isWindows"
     },
-    // Format Document
+    // 문서 포맷
     {
         "key": "alt+shift+i",
         "command": "editor.action.formatDocument",
         "when": "isWindows"
     },
-    // Go to Symbol
+    // 심볼로 이동
     {
         "key": "alt+r",
         "command": "workbench.action.gotoSymbol",
         "when": "isWindows"
     },
-    // Toggle Terminal
+    // 터미널 토글
     {
         "key": "alt+oem_3",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "isWindows"
     },
-    // Toggle Sidebar
+    // 사이드바 토글
     {
         "key": "alt+b",
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "isWindows"
     },
-    // Explorer
+    // 탐색기
     {
         "key": "alt+shift+e",
         "command": "workbench.view.explorer",
         "when": "isWindows"
     },
-    // Extensions
+    // 확장
     {
         "key": "alt+shift+x",
         "command": "workbench.view.extensions",
         "when": "isWindows"
     },
-    // Problems
+    // 문제
     {
         "key": "alt+shift+m",
         "command": "workbench.actions.view.problems",
         "when": "isWindows"
     },
-    // Output
+    // 출력
     {
         "key": "alt+shift+u",
         "command": "workbench.action.output.toggleOutput",
         "when": "isWindows"
     },
-    // Debug Console
+    // 디버그 콘솔
     {
         "key": "alt+shift+y",
         "command": "workbench.debug.action.toggleRepl",
         "when": "isWindows"
     },
-    // Integrated Terminal
+    // 새 터미널
     {
         "key": "alt+shift+oem_3",
         "command": "workbench.action.terminal.new",
         "when": "isWindows"
     },
     /*
-     * Cursor Chat (Cross Platform)
+     * Cursor AI Chat (Cross Platform)
+     * Cursor의 AI 채팅 및 에이전트 기능
      */
-    // Windows
-    // 기존 context 유지
+    // Windows - AI 채팅 기능
     {
         "key": "alt+l",
         "command": "composerMode.chat",
@@ -478,14 +433,12 @@
         "command": "composerMode.agent",
         "when": "isWindows"
     },
-    // 새로운 Agent Chat용 단축키 추가
     {
-        "key": "shift+win+l",
+        "key": "ctrl+alt+l",
         "command": "composer.newAgentChat",
-        "when": "isMac"
+        "when": "isWindows"
     },
-    // Mac
-    // 기존 context 유지
+    // Mac - AI 채팅 기능
     {
         "key": "cmd+l",
         "command": "composerMode.chat",
@@ -496,15 +449,16 @@
         "command": "composerMode.agent",
         "when": "isMac"
     },
-    // 새로운 Agent Chat용 단축키 추가
     {
         "key": "shift+option+l",
         "command": "composer.newAgentChat",
         "when": "isMac"
     },
     /*
-     * Windows 설정 
+     * Advanced Windows Settings
+     * Windows 전용 고급 설정 및 특수 기능
      */
+    // AI 설정 패널
     {
         "key": "shift+alt+j",
         "command": "-bookmarks.expandSelectionToPrevious",
@@ -520,26 +474,7 @@
         "command": "-aiSettings.action.open",
         "when": "isWindows && !isSettingsPaneOpen"
     },
-    {
-        "key": "shift+alt+f",
-        "command": "workbench.view.search",
-        "when": "isWindows && workbench.view.search.active && neverMatch =~ /doesNotMatch/"
-    },
-    {
-        "key": "ctrl+shift+f",
-        "command": "-workbench.view.search",
-        "when": "isWindows && workbench.view.search.active && neverMatch =~ /doesNotMatch/"
-    },
-    {
-        "key": "shift+alt+f",
-        "command": "workbench.action.terminal.searchWorkspace",
-        "when": "isWindows && terminalFocus && terminalProcessSupported && terminalTextSelected"
-    },
-    {
-        "key": "ctrl+shift+f",
-        "command": "-workbench.action.terminal.searchWorkspace",
-        "when": "isWindows && terminalFocus && terminalProcessSupported && terminalTextSelected"
-    },
+    // 파일에서 찾기 (다중 컨텍스트)
     {
         "key": "shift+alt+f",
         "command": "workbench.action.findInFiles",
@@ -550,6 +485,7 @@
         "command": "-workbench.action.findInFiles",
         "when": "isWindows"
     },
+    // 디버그 뷰
     {
         "key": "shift+alt+d",
         "command": "workbench.view.debug",
@@ -560,21 +496,13 @@
         "command": "-workbench.view.debug",
         "when": "isWindows && viewContainer.workbench.view.debug.enabled"
     },
+    // 소스 컨트롤 뷰 (기본 키바인딩 비활성화)
     {
         "key": "ctrl+shift+g",
         "command": "-workbench.view.scm",
         "when": "isWindows && workbench.scm.active"
     },
-    {
-        "key": "shift+alt+g",
-        "command": "workbench.action.terminal.openDetectedLink",
-        "when": "isWindows && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
-    },
-    {
-        "key": "ctrl+shift+g",
-        "command": "-workbench.action.terminal.openDetectedLink",
-        "when": "isWindows && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
-    },
+    // 컴포저 관련 기능
     {
         "key": "alt+n",
         "command": "composer.createNewWithPrevContext",
@@ -585,16 +513,7 @@
         "command": "-composer.createNewWithPrevContext",
         "when": "isWindows && (composerFocused || focusedView =~ /^workbench.panel.aichat.view/)"
     },
-    {
-        "key": "alt+t",
-        "command": "composer.createNewComposerTab",
-        "when": "isWindows && (composerFocused || focusedView =~ /^workbench.panel.aichat.view/)"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "-composer.createNewComposerTab",
-        "when": "isWindows && (composerFocused || focusedView =~ /^workbench.panel.aichat.view/)"
-    },
+    // AI 팝업
     {
         "key": "alt+k",
         "command": "aipopup.action.modal.generate",
@@ -605,14 +524,7 @@
         "command": "-aipopup.action.modal.generate",
         "when": "isWindows && editorFocus && !composerBarIsVisible"
     },
-    // {
-    //     "key": "alt+l",
-    //     "command": "isWindows && aichat.newchataction"
-    // },
-    // {
-    //     "key": "ctrl+l",
-    //     "command": "isWindows && -aichat.newchataction"
-    // },
+    // 에이전트에게 전송
     {
         "key": "alt+l",
         "command": "composer.sendToAgent",
@@ -623,16 +535,18 @@
         "command": "-composer.sendToAgent",
         "when": "isWindows && editorHasPromptBar && editorPromptBarFocused"
     },
+    // 터미널 찾기
     {
         "key": "alt+f",
         "command": "workbench.action.terminal.focusFind",
-        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+        "when": "isWindows && (terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported)"
     },
     {
         "key": "ctrl+f",
         "command": "-workbench.action.terminal.focusFind",
         "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
     },
+    // 에러 수정
     {
         "key": "shift+alt+d",
         "command": "composer.fixerrormessage",
@@ -643,40 +557,47 @@
         "command": "-composer.fixerrormessage",
         "when": "@composer.isCursorOnLint"
     },
+    /*
+     * Diff Navigation (Prioritized Context Handling)
+     * 차이점 네비게이션 - 컨텍스트별 우선순위 처리
+     */
+    // 다음 변경사항 (우선순위: 인라인 diff > 비교 에디터 > 일반 에디터)
     {
         "key": "alt+d",
         "command": "editor.action.inlineDiffs.nextChange",
         "when": "editorTextFocus && @inlineDiffs.nextChange.isActiveEditorWithDiffs"
     },
     {
-        "key": "alt+j",
-        "command": "-editor.action.inlineDiffs.nextChange",
-        "when": "editorTextFocus && @inlineDiffs.nextChange.isActiveEditorWithDiffs"
-    },
-    {
         "key": "alt+d",
         "command": "workbench.action.compareEditor.nextChange",
-        "when": "textCompareEditorVisible"
-    },
-    {
-        "key": "alt+f5",
-        "command": "-workbench.action.compareEditor.nextChange",
-        "when": "textCompareEditorVisible"
+        "when": "textCompareEditorVisible && !@inlineDiffs.nextChange.isActiveEditorWithDiffs"
     },
     {
         "key": "alt+d",
         "command": "workbench.action.editor.nextChange",
-        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0' && !@inlineDiffs.nextChange.isActiveEditorWithDiffs"
     },
-    {
-        "key": "alt+f5",
-        "command": "-workbench.action.editor.nextChange",
-        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
-    },
+    // 이전 변경사항
     {
         "key": "ctrl+alt+d",
         "command": "editor.action.inlineDiffs.previousChange",
         "when": "editorTextFocus && @inlineDiffs.previousChange.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible && !@inlineDiffs.previousChange.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "workbench.action.editor.previousChange",
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0' && !@inlineDiffs.previousChange.isActiveEditorWithDiffs"
+    },
+    // 기본 키바인딩 비활성화
+    {
+        "key": "alt+j",
+        "command": "-editor.action.inlineDiffs.nextChange",
+        "when": "editorTextFocus && @inlineDiffs.nextChange.isActiveEditorWithDiffs"
     },
     {
         "key": "alt+k",
@@ -684,8 +605,8 @@
         "when": "editorTextFocus && @inlineDiffs.previousChange.isActiveEditorWithDiffs"
     },
     {
-        "key": "ctrl+alt+d",
-        "command": "workbench.action.compareEditor.previousChange",
+        "key": "alt+f5",
+        "command": "-workbench.action.compareEditor.nextChange",
         "when": "textCompareEditorVisible"
     },
     {
@@ -694,8 +615,8 @@
         "when": "textCompareEditorVisible"
     },
     {
-        "key": "ctrl+alt+d",
-        "command": "workbench.action.editor.previousChange",
+        "key": "alt+f5",
+        "command": "-workbench.action.editor.nextChange",
         "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
     },
     {
@@ -703,19 +624,36 @@
         "command": "-workbench.action.editor.previousChange",
         "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
     },
+    /*
+     * Terminal and Editor Navigation
+     * 터미널 및 에디터 간 네비게이션
+     */
+    // 터미널 간 이동
     {
         "key": "ctrl+oem_comma",
         "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
     {
-        "key": "ctrl+pageup",
-        "command": "-workbench.action.terminal.focusPrevious",
-        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-    },
-    {
         "key": "ctrl+oem_period",
         "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    // 에디터 간 이동
+    {
+        "key": "ctrl+oem_period",
+        "command": "workbench.action.nextEditor",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+oem_comma",
+        "command": "workbench.action.previousEditor",
+        "when": "!terminalFocus"
+    },
+    // 기본 키바인딩 비활성화
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.terminal.focusPrevious",
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
     {
@@ -724,29 +662,15 @@
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
     {
-        "key": "ctrl+oem_period",
-        "command": "workbench.action.nextEditor"
-    },
-    {
         "key": "ctrl+pagedown",
         "command": "-workbench.action.nextEditor"
-    },
-    {
-        "key": "ctrl+oem_comma",
-        "command": "workbench.action.previousEditor"
     },
     {
         "key": "ctrl+pageup",
         "command": "-workbench.action.previousEditor"
     },
-    // {
-    //     "key": "alt+l",
-    //     "command": "extension.vim_navigateCtrlL",
-    //     "when": "isWindows && editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
-    // },
-    // {
-    //     "key": "ctrl+l",
-    //     "command": "-extension.vim_navigateCtrlL",
-    //     "when": "isWindows && editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
-    // }
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    }
 ]

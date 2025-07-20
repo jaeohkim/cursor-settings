@@ -93,7 +93,9 @@
     "vim.smartRelativeLine": true,
     "workbench.colorTheme": "Visual Studio Dark",
     "remote.autoForwardPortsSource": "hybrid",
-    "terminal.integrated.fontSize": 12,
     "cursor.general.disableHttp2": true,
-    "diffEditor.maxComputationTime": 0
+    "diffEditor.maxComputationTime": 0,
+    "remote.SSH.remotePlatform": {
+        "server": "linux"
+    }
 }
