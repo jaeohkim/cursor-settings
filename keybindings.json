@@ -158,6 +158,11 @@
      * Git 및 소스 컨트롤 관련 기능
      */
     {
+        "key": "shift+alt+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active && isWindows"
+    },
+    {
         "key": "shift+cmd+g",
         "command": "workbench.view.scm",
         "when": "workbench.scm.active && isMac"
@@ -178,6 +183,11 @@
      * 북마크 확장 기능 - 양쪽 플랫폼 지원
      */
     {
+        "key": "shift+alt+b",
+        "command": "workbench.view.extension.bookmarks",
+        "when": "editorFocus && isWindows"
+    },
+    {
         "key": "shift+cmd+b",
         "command": "workbench.view.extension.bookmarks",
         "when": "editorFocus && isMac"
@@ -190,212 +200,6 @@
         "key": "ctrl+[",
         "command": "extension.vim_escape",
         "when": "editorTextFocus && vim.mode != 'Normal'"
-    },
-    /*
-     * List Navigation (VIM Style)
-     * VIM 스타일 리스트 네비게이션
-     */
-    {
-        "key": "ctrl+n",
-        "command": "list.focusDown",
-        "when": "listFocus && !inQuickOpen && !findWidgetVisible"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "list.focusUp",
-        "when": "listFocus && !inQuickOpen && !findWidgetVisible"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "workbench.action.quickOpenNavigateNext",
-        "when": "inQuickOpen"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "workbench.action.quickOpenNavigatePrevious",
-        "when": "inQuickOpen"
-    },
-    /*
-     * Mac-style Windows Keybindings (Alt = Cmd Position)
-     * Windows에서 Mac 스타일 키보드 단축키 제공 (Alt 키를 Cmd 키처럼 사용)
-     */
-    // 명령 팔레트
-    {
-        "key": "alt+shift+p",
-        "command": "workbench.action.showCommands",
-        "when": "isWindows"
-    },
-    // 빠른 열기
-    {
-        "key": "alt+p",
-        "command": "workbench.action.quickOpen",
-        "when": "isWindows"
-    },
-    // 설정
-    {
-        "key": "alt+oem_comma",
-        "command": "workbench.action.openSettings",
-        "when": "isWindows"
-    },
-    // 파일 열기
-    {
-        "key": "alt+o",
-        "command": "workbench.action.files.openFile",
-        "when": "isWindows"
-    },
-    // 다른 이름으로 저장
-    {
-        "key": "alt+shift+s",
-        "command": "workbench.action.files.saveAs",
-        "when": "isWindows"
-    },
-    // 모든 탭 닫기
-    {
-        "key": "alt+shift+w",
-        "command": "workbench.action.closeAllEditors",
-        "when": "isWindows"
-    },
-    // 최근에 닫은 탭 다시 열기
-    {
-        "key": "alt+shift+t",
-        "command": "workbench.action.reopenClosedEditor",
-        "when": "isWindows"
-    },
-    // 탭 네비게이션 (1-9)
-    {
-        "key": "alt+1",
-        "command": "workbench.action.openEditorAtIndex1",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+2",
-        "command": "workbench.action.openEditorAtIndex2",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+3",
-        "command": "workbench.action.openEditorAtIndex3",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+4",
-        "command": "workbench.action.openEditorAtIndex4",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+5",
-        "command": "workbench.action.openEditorAtIndex5",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+6",
-        "command": "workbench.action.openEditorAtIndex6",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+7",
-        "command": "workbench.action.openEditorAtIndex7",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+8",
-        "command": "workbench.action.openEditorAtIndex8",
-        "when": "isWindows"
-    },
-    {
-        "key": "alt+9",
-        "command": "workbench.action.openEditorAtIndex9",
-        "when": "isWindows"
-    },
-    // 마지막 탭
-    {
-        "key": "alt+0",
-        "command": "workbench.action.lastEditorInGroup",
-        "when": "isWindows"
-    },
-    // 찾기
-    {
-        "key": "alt+f",
-        "command": "actions.find",
-        "when": "isWindows && editorFocus"
-    },
-    // 바꾸기
-    {
-        "key": "alt+shift+f",
-        "command": "editor.action.startFindReplaceAction",
-        "when": "isWindows && editorFocus"
-    },
-    // 파일에서 찾기
-    {
-        "key": "alt+shift+h",
-        "command": "workbench.action.findInFiles",
-        "when": "isWindows"
-    },
-    // 줄로 이동
-    {
-        "key": "alt+g",
-        "command": "workbench.action.gotoLine",
-        "when": "isWindows"
-    },
-    // 주석 토글
-    {
-        "key": "alt+oem_2",
-        "command": "editor.action.commentLine",
-        "when": "isWindows"
-    },
-    // 문서 포맷
-    {
-        "key": "alt+shift+i",
-        "command": "editor.action.formatDocument",
-        "when": "isWindows"
-    },
-    // 심볼로 이동
-    {
-        "key": "alt+r",
-        "command": "workbench.action.gotoSymbol",
-        "when": "isWindows"
-    },
-    // 터미널 토글
-    {
-        "key": "alt+oem_3",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "isWindows"
-    },
-    // 사이드바 토글
-    {
-        "key": "alt+b",
-        "command": "workbench.action.toggleSidebarVisibility",
-        "when": "isWindows"
-    },
-    // 탐색기
-    {
-        "key": "alt+shift+x",
-        "command": "workbench.view.extensions",
-        "when": "isWindows"
-    },
-    // 문제
-    {
-        "key": "alt+shift+m",
-        "command": "workbench.actions.view.problems",
-        "when": "isWindows"
-    },
-    // 출력
-    {
-        "key": "alt+shift+u",
-        "command": "workbench.action.output.toggleOutput",
-        "when": "isWindows"
-    },
-    // 디버그 콘솔
-    {
-        "key": "alt+shift+y",
-        "command": "workbench.debug.action.toggleRepl",
-        "when": "isWindows"
-    },
-    // 새 터미널
-    {
-        "key": "alt+shift+oem_3",
-        "command": "workbench.action.terminal.new",
-        "when": "isWindows"
     },
     /*
      * Cursor AI Chat (Cross Platform)
@@ -432,92 +236,6 @@
         "key": "shift+option+l",
         "command": "composer.newAgentChat",
         "when": "isMac"
-    },
-    /*
-     * Advanced Windows Settings
-     * Windows 전용 고급 설정 및 특수 기능
-     */
-    // AI 설정 패널
-    {
-        "key": "shift+alt+j",
-        "command": "-bookmarks.expandSelectionToPrevious",
-        "when": "isWindows && editorTextFocus"
-    },
-    {
-        "key": "shift+alt+j",
-        "command": "aiSettings.action.open",
-        "when": "isWindows && !isSettingsPaneOpen"
-    },
-    {
-        "key": "ctrl+shift+j",
-        "command": "-aiSettings.action.open",
-        "when": "isWindows && !isSettingsPaneOpen"
-    },
-    // 파일에서 찾기 (다중 컨텍스트)
-    {
-        "key": "shift+alt+f",
-        "command": "workbench.action.findInFiles",
-        "when": "isWindows"
-    },
-    {
-        "key": "ctrl+shift+f",
-        "command": "-workbench.action.findInFiles",
-        "when": "isWindows"
-    },
-    // 디버그 뷰
-    {
-        "key": "alt+n",
-        "command": "composer.createNewWithPrevContext",
-        "when": "isWindows && (composerFocused || focusedView =~ /^workbench.panel.aichat.view/)"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "-composer.createNewWithPrevContext",
-        "when": "isWindows && (composerFocused || focusedView =~ /^workbench.panel.aichat.view/)"
-    },
-    // AI 팝업
-    {
-        "key": "alt+k",
-        "command": "aipopup.action.modal.generate",
-        "when": "isWindows && editorFocus && !composerBarIsVisible"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "-aipopup.action.modal.generate",
-        "when": "isWindows && editorFocus && !composerBarIsVisible"
-    },
-    // 에이전트에게 전송
-    {
-        "key": "alt+l",
-        "command": "composer.sendToAgent",
-        "when": "isWindows && editorHasPromptBar && editorPromptBarFocused"
-    },
-    {
-        "key": "ctrl+l",
-        "command": "-composer.sendToAgent",
-        "when": "isWindows && editorHasPromptBar && editorPromptBarFocused"
-    },
-    // 터미널 찾기
-    {
-        "key": "alt+f",
-        "command": "workbench.action.terminal.focusFind",
-        "when": "isWindows && (terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported)"
-    },
-    {
-        "key": "ctrl+f",
-        "command": "-workbench.action.terminal.focusFind",
-        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
-    },
-    // 에러 수정
-    {
-        "key": "shift+alt+d",
-        "command": "composer.fixerrormessage",
-        "when": "@composer.isCursorOnLint"
-    },
-    {
-        "key": "ctrl+shift+d",
-        "command": "-composer.fixerrormessage",
-        "when": "@composer.isCursorOnLint"
     },
     /*
      * Diff Navigation (Prioritized Context Handling)
